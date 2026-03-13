@@ -56,9 +56,9 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid equal-grid gap-4 sm:grid-cols-3">
               {companyStats.map((item) => (
-                <div key={item.label} className="panel card-lift p-5">
+                <div key={item.label} className="panel card-lift equal-card p-5">
                   <p className="font-display text-4xl font-semibold text-deep">{item.value}</p>
                   <p className="mt-2 text-sm uppercase tracking-[0.22em] text-slate/70">{item.label}</p>
                 </div>
@@ -137,14 +137,14 @@ export default function HomePage() {
           />
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid equal-grid gap-6 lg:grid-cols-3">
           {[
             "Income is spread across multiple apps and payout systems.",
             "Weekly volatility makes raw statements hard to interpret.",
             "Traditional scorecards ignore ratings, active days, and platform tenure.",
           ].map((item, index) => (
-            <Reveal key={item} delay={index * 80}>
-              <div className="panel card-lift p-7">
+            <Reveal key={item} className="h-full" delay={index * 80}>
+              <div className="panel card-lift equal-card p-7">
                 <p className="font-display text-2xl text-ink">{item}</p>
               </div>
             </Reveal>
@@ -179,10 +179,10 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid equal-grid gap-5 md:grid-cols-2">
             {architectureLayers.map((layer, index) => (
-              <Reveal key={layer.name} delay={index * 70}>
-                <div className="panel card-lift p-6">
+              <Reveal key={layer.name} className="h-full" delay={index * 70}>
+                <div className="panel card-lift equal-card p-6">
                   <p className="text-sm uppercase tracking-[0.24em] text-tide">{layer.name}</p>
                   <p className="mt-4 font-display text-2xl text-ink">{layer.detail}</p>
                 </div>
@@ -201,10 +201,10 @@ export default function HomePage() {
           />
         </Reveal>
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid equal-grid gap-5 lg:grid-cols-3">
           {workflowSteps.slice(0, 6).map((step, index) => (
-            <Reveal key={step.step} delay={index * 70}>
-              <div className="panel card-lift p-6">
+            <Reveal key={step.step} className="h-full" delay={index * 70}>
+              <div className="panel card-lift equal-card p-6">
                 <div className="flex items-center justify-between gap-4">
                   <p className="font-display text-4xl text-deep">{step.step}</p>
                   <span className="rounded-full bg-deep/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-deep">
@@ -228,13 +228,13 @@ export default function HomePage() {
                 12,000 and back into responsible loan size recommendations.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid equal-grid gap-4 sm:grid-cols-3">
               {[
                 { label: "Average monthly income", value: "INR 40,000" },
                 { label: "Safe EMI threshold", value: "30%" },
                 { label: "Indicative EMI capacity", value: "INR 12,000" },
               ].map((item) => (
-                <div key={item.label} className="card-lift rounded-[1.6rem] border border-deep/10 bg-mist/45 p-5">
+                <div key={item.label} className="card-lift equal-card rounded-[1.6rem] border border-deep/10 bg-mist/45 p-5">
                   <p className="text-sm uppercase tracking-[0.2em] text-slate/70">{item.label}</p>
                   <p className="mt-4 font-display text-3xl text-deep">{item.value}</p>
                 </div>
@@ -254,10 +254,10 @@ export default function HomePage() {
               light
             />
           </Reveal>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid equal-grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {featureCards.map((feature, index) => (
-              <Reveal key={feature.title} delay={index * 70}>
-                <div className="card-lift rounded-[2rem] border border-white/10 bg-white/5 p-6">
+              <Reveal key={feature.title} className="h-full" delay={index * 70}>
+                <div className="card-lift equal-card rounded-[2rem] border border-white/10 bg-white/5 p-6">
                   <h3 className="font-display text-2xl text-white">{feature.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-white/70">{feature.description}</p>
                 </div>
@@ -370,14 +370,14 @@ export default function HomePage() {
                 <p className="text-sm uppercase tracking-[0.24em] text-mist/60">Long-term vision</p>
                 <h2 className="mt-4 font-display text-4xl leading-tight">India&apos;s financial identity layer for gig workers.</h2>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid equal-grid gap-4 sm:grid-cols-2">
                 {[
                   "Insurance access",
                   "Savings products",
                   "Credit cards",
                   "BNPL for gig workers",
                 ].map((item) => (
-                  <div key={item} className="card-lift rounded-[1.5rem] border border-white/10 bg-white/5 px-4 py-4 text-sm text-white/80">
+                  <div key={item} className="card-lift equal-card rounded-[1.5rem] border border-white/10 bg-white/5 px-4 py-4 text-sm text-white/80">
                     {item}
                   </div>
                 ))}

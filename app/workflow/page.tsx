@@ -33,10 +33,10 @@ export default function WorkflowPage() {
           />
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid equal-grid gap-6 lg:grid-cols-2">
           {workflowSteps.map((step, index) => (
-            <Reveal key={step.step} delay={index * 55}>
-              <div className="panel card-lift relative overflow-hidden p-7">
+            <Reveal key={step.step} className="h-full" delay={index * 55}>
+              <div className="panel card-lift equal-card relative overflow-hidden p-7">
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-mist/70" />
                 <div className="relative">
                   <div className="flex items-center justify-between gap-4">
@@ -113,13 +113,13 @@ export default function WorkflowPage() {
 
         <Reveal delay={120}>
           <div className="panel card-lift p-8">
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid equal-grid gap-4 sm:grid-cols-3">
             {[
               { label: "Average income", value: "INR 40,000" },
               { label: "EMI threshold", value: "30%" },
               { label: "Indicative EMI", value: "INR 12,000" },
             ].map((item) => (
-              <div key={item.label} className="card-lift rounded-[1.5rem] border border-deep/10 bg-mist/45 px-4 py-4">
+              <div key={item.label} className="card-lift equal-card rounded-[1.5rem] border border-deep/10 bg-mist/45 px-4 py-4">
                 <p className="text-sm uppercase tracking-[0.22em] text-slate/70">{item.label}</p>
                 <p className="mt-4 font-display text-3xl text-deep">{item.value}</p>
               </div>

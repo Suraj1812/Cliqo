@@ -102,10 +102,10 @@ export default function AboutPage() {
               description="Cliqo is not just a dashboard. It is an infrastructure layer that has to balance worker trust, lender clarity, and scalable operational rigor."
             />
           </Reveal>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid equal-grid gap-5 md:grid-cols-2">
             {values.map((value, index) => (
-              <Reveal key={value} delay={index * 70}>
-                <div className="panel card-lift p-6">
+              <Reveal key={value} className="h-full" delay={index * 70}>
+                <div className="panel card-lift equal-card p-6">
                   <p className="font-display text-2xl text-ink">{value}</p>
                 </div>
               </Reveal>

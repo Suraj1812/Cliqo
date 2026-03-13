@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN">
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

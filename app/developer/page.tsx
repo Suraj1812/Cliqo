@@ -86,7 +86,7 @@ export default function DeveloperPage() {
       </section>
 
       <section className="bg-white/55 py-20">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid equal-grid w-full max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:px-8">
           <CodeBlock title="Create a linked profile" language="json" code={requestExample} />
           <CodeBlock title="Credit profile response" language="json" code={responseExample} />
         </div>

@@ -33,10 +33,10 @@ export default function ProductPage() {
             description="Each layer handles a different failure point in gig-worker underwriting, from identity assurance to portfolio monitoring."
           />
         </Reveal>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid equal-grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {architectureLayers.map((layer, index) => (
-            <Reveal key={layer.name} delay={index * 70}>
-              <div className="panel card-lift p-7">
+            <Reveal key={layer.name} className="h-full" delay={index * 70}>
+              <div className="panel card-lift equal-card p-7">
                 <p className="text-sm uppercase tracking-[0.22em] text-tide">Layer {index + 1}</p>
                 <h2 className="mt-4 font-display text-3xl text-ink">{layer.name}</h2>
                 <p className="mt-4 text-sm leading-7 text-slate">{layer.detail}</p>
@@ -56,7 +56,7 @@ export default function ProductPage() {
               Cliqo standardizes ride, delivery, and service income across platforms so lenders can compare workers
               consistently instead of reverse-engineering platform dashboards.
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="grid equal-grid mt-8 gap-4 sm:grid-cols-2">
               {[
                 "Monthly earnings",
                 "Weekly earnings",
@@ -65,7 +65,7 @@ export default function ProductPage() {
                 "Income volatility",
                 "Income growth trend",
               ].map((item) => (
-                <div key={item} className="card-lift rounded-[1.5rem] border border-deep/10 bg-mist/45 px-4 py-4 text-sm text-slate">
+                <div key={item} className="card-lift equal-card rounded-[1.5rem] border border-deep/10 bg-mist/45 px-4 py-4 text-sm text-slate">
                   {item}
                 </div>
               ))}
@@ -122,9 +122,9 @@ export default function ProductPage() {
           <div className="panel card-lift p-8">
           <p className="eyebrow">Dashboard surface</p>
           <h2 className="mt-6 font-display text-4xl text-ink">A profile lenders can review in minutes.</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="grid equal-grid mt-8 gap-4 sm:grid-cols-2">
             {dashboardMetrics.map((metric) => (
-              <div key={metric} className="card-lift rounded-[1.5rem] border border-deep/10 bg-white/75 px-4 py-4 text-sm text-slate">
+              <div key={metric} className="card-lift equal-card rounded-[1.5rem] border border-deep/10 bg-white/75 px-4 py-4 text-sm text-slate">
                 {metric}
               </div>
             ))}
@@ -181,10 +181,10 @@ export default function ProductPage() {
             description="Lenders can start with verification APIs, add the dashboard for operations, and expand into ongoing monitoring as their portfolio matures."
           />
         </Reveal>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid equal-grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {featureCards.map((feature, index) => (
-            <Reveal key={feature.title} delay={index * 70}>
-              <div className="panel card-lift p-6">
+            <Reveal key={feature.title} className="h-full" delay={index * 70}>
+              <div className="panel card-lift equal-card p-6">
                 <h3 className="font-display text-2xl text-ink">{feature.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate">{feature.description}</p>
               </div>
