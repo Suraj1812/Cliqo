@@ -22,8 +22,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-deep/10 bg-sand/90 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-4 lg:px-8">
         <div className="flex items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-3">
-            <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-deep/10 bg-white shadow-panel">
+          <Link href="/" className="flex min-w-0 items-center gap-3">
+            <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-deep/10 bg-white shadow-panel">
               <Image
                 src={siteConfig.company.image}
                 alt={`${siteConfig.company.name} logo`}
@@ -33,9 +33,11 @@ export function SiteHeader() {
                 priority
               />
             </span>
-            <div>
+            <div className="min-w-0">
               <p className="font-display text-xl font-semibold tracking-tight text-ink">{siteConfig.company.name}</p>
-              <p className="text-xs uppercase tracking-[0.22em] text-slate/70">{siteConfig.company.tagline}</p>
+              <p className="hidden max-w-[15rem] text-[0.64rem] uppercase leading-tight tracking-[0.14em] text-slate/70 md:block xl:max-w-[18rem]">
+                {siteConfig.company.tagline}
+              </p>
             </div>
           </Link>
 
@@ -60,7 +62,7 @@ export function SiteHeader() {
 
           <Link
             href="/contact"
-            className="rounded-full bg-ember px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-amber-500"
+            className="button-sheen shrink-0 rounded-full bg-ember px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-amber-500 sm:px-5"
           >
             Request Demo
           </Link>

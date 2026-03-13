@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { PageHero } from "@/components/page-hero";
+import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site-config";
@@ -27,21 +28,26 @@ export default function AboutPage() {
 
       <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div className="space-y-8">
-          <SectionHeading
-            eyebrow="Mission"
-            title="Build the credit infrastructure layer for India's gig economy."
-            description="Cliqo helps lenders, fintech partners, and worker platforms serve people whose earning power is real but under-documented."
-          />
-          <div className="panel p-7">
-            <p className="font-display text-3xl text-ink">Why now?</p>
-            <p className="mt-4 text-lg leading-8 text-slate">
-              Millions of workers across ride-hailing, delivery, home services, and freelance platforms are generating
-              steady income, yet remain outside the formal systems banks trust. Cliqo bridges that gap.
-            </p>
-          </div>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Mission"
+              title="Build the credit infrastructure layer for India's gig economy."
+              description="Cliqo helps lenders, fintech partners, and worker platforms serve people whose earning power is real but under-documented."
+            />
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="panel card-lift p-7">
+              <p className="font-display text-3xl text-ink">Why now?</p>
+              <p className="mt-4 text-lg leading-8 text-slate">
+                Millions of workers across ride-hailing, delivery, home services, and freelance platforms are generating
+                steady income, yet remain outside the formal systems banks trust. Cliqo bridges that gap.
+              </p>
+            </div>
+          </Reveal>
         </div>
 
-        <div className="glass-dark grid gap-8 p-8 text-white sm:grid-cols-[220px_1fr] sm:items-start">
+        <Reveal delay={120}>
+          <div className="glass-dark card-lift grid gap-8 p-8 text-white sm:grid-cols-[220px_1fr] sm:items-start">
           <div className="relative mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
             <Image
               src={siteConfig.founder.image}
@@ -69,7 +75,7 @@ export default function AboutPage() {
                 href={siteConfig.founder.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex rounded-full bg-ember px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                className="button-sheen inline-flex rounded-full bg-ember px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
               >
                 CEO LinkedIn
               </a>
@@ -83,21 +89,26 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="bg-white/55 py-20">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Values"
-            title="The operating principles behind the product."
-            description="Cliqo is not just a dashboard. It is an infrastructure layer that has to balance worker trust, lender clarity, and scalable operational rigor."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Values"
+              title="The operating principles behind the product."
+              description="Cliqo is not just a dashboard. It is an infrastructure layer that has to balance worker trust, lender clarity, and scalable operational rigor."
+            />
+          </Reveal>
           <div className="grid gap-5 md:grid-cols-2">
-            {values.map((value) => (
-              <div key={value} className="panel p-6">
-                <p className="font-display text-2xl text-ink">{value}</p>
-              </div>
+            {values.map((value, index) => (
+              <Reveal key={value} delay={index * 70}>
+                <div className="panel card-lift p-6">
+                  <p className="font-display text-2xl text-ink">{value}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -105,36 +116,40 @@ export default function AboutPage() {
 
       <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:px-8">
         <div className="space-y-8">
-          <SectionHeading
-            eyebrow="Vision"
-            title="From lending rails to a full financial identity layer."
-            description="The same infrastructure that supports underwriting today can unlock better financial products for workers over time."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Vision"
+              title="From lending rails to a full financial identity layer."
+              description="The same infrastructure that supports underwriting today can unlock better financial products for workers over time."
+            />
+          </Reveal>
           <div className="grid gap-4">
             {[
               "Insurance access",
               "Savings products",
               "Credit cards",
               "BNPL and short-cycle products",
-            ].map((item) => (
-              <div key={item} className="panel px-5 py-5 text-sm leading-7 text-slate">
-                {item}
-              </div>
+            ].map((item, index) => (
+              <Reveal key={item} delay={index * 70}>
+                <div className="panel card-lift px-5 py-5 text-sm leading-7 text-slate">{item}</div>
+              </Reveal>
             ))}
           </div>
         </div>
 
-        <div className="panel p-8">
+        <Reveal delay={100}>
+          <div className="panel card-lift p-8">
           <p className="eyebrow">Who we work with</p>
           <div className="mt-8 grid gap-4">
             {customers.map((customer) => (
-              <div key={customer.title} className="rounded-[1.5rem] border border-deep/10 bg-white/75 px-5 py-4">
+              <div key={customer.title} className="card-lift rounded-[1.5rem] border border-deep/10 bg-white/75 px-5 py-4">
                 <p className="font-display text-2xl text-ink">{customer.title}</p>
                 <p className="mt-3 text-sm leading-7 text-slate">{customer.detail}</p>
               </div>
             ))}
           </div>
-        </div>
+          </div>
+        </Reveal>
       </section>
     </>
   );

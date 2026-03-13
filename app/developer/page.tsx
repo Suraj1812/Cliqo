@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { CodeBlock } from "@/components/code-block";
 import { PageHero } from "@/components/page-hero";
+import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { createPageMetadata } from "@/lib/metadata";
 import { apiEndpoints } from "@/lib/site-data";
@@ -54,28 +55,32 @@ export default function DeveloperPage() {
       />
 
       <section className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 py-20 lg:px-8">
-        <SectionHeading
-          eyebrow="API surface"
-          title="A compact API designed for onboarding, underwriting, and monitoring."
-          description="Endpoints are structured so product teams can start with verification and expand into deeper credit intelligence over time."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="API surface"
+            title="A compact API designed for onboarding, underwriting, and monitoring."
+            description="Endpoints are structured so product teams can start with verification and expand into deeper credit intelligence over time."
+          />
+        </Reveal>
 
         <div className="grid gap-5">
-          {apiEndpoints.map((endpoint) => (
-            <div key={endpoint.path} className="panel flex flex-col gap-4 p-6 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="rounded-full bg-deep px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-sand">
-                    {endpoint.method}
-                  </span>
-                  <code className="font-display text-xl text-ink">{endpoint.path}</code>
+          {apiEndpoints.map((endpoint, index) => (
+            <Reveal key={endpoint.path} delay={index * 70}>
+              <div className="panel card-lift flex flex-col gap-4 p-6 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="rounded-full bg-deep px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-sand">
+                      {endpoint.method}
+                    </span>
+                    <code className="font-display text-xl text-ink">{endpoint.path}</code>
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-slate">{endpoint.description}</p>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-slate">{endpoint.description}</p>
+                <span className="rounded-full border border-deep/10 bg-white/80 px-4 py-2 text-sm text-slate">
+                  REST JSON
+                </span>
               </div>
-              <span className="rounded-full border border-deep/10 bg-white/80 px-4 py-2 text-sm text-slate">
-                REST JSON
-              </span>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -89,28 +94,33 @@ export default function DeveloperPage() {
 
       <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div className="space-y-8">
-          <SectionHeading
-            eyebrow="Authentication"
-            title="Designed for fintech-grade security and clear consent boundaries."
-            description="Each worker connection is tied to explicit consent, and lenders access only the data products their integration is approved to use."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Authentication"
+              title="Designed for fintech-grade security and clear consent boundaries."
+              description="Each worker connection is tied to explicit consent, and lenders access only the data products their integration is approved to use."
+            />
+          </Reveal>
           <div className="grid gap-4">
             {[
               "API key authentication for server-to-server access",
               "Worker-scoped consent tokens for platform linking",
               "Audit logs for every profile retrieval and refresh",
               "Webhook signatures for monitoring events",
-            ].map((item) => (
-              <div key={item} className="panel px-5 py-5 text-sm leading-7 text-slate">
-                {item}
-              </div>
+            ].map((item, index) => (
+              <Reveal key={item} delay={index * 70}>
+                <div className="panel card-lift px-5 py-5 text-sm leading-7 text-slate">{item}</div>
+              </Reveal>
             ))}
           </div>
         </div>
 
         <div className="space-y-8">
-          <CodeBlock title="TypeScript SDK example" language="ts" code={sdkExample} />
-          <div className="panel p-7">
+          <Reveal delay={100}>
+            <CodeBlock title="TypeScript SDK example" language="ts" code={sdkExample} />
+          </Reveal>
+          <Reveal delay={160}>
+            <div className="panel card-lift p-7">
             <p className="eyebrow">Integration path</p>
             <div className="mt-6 grid gap-4">
               {[
@@ -119,12 +129,13 @@ export default function DeveloperPage() {
                 "3. Poll or subscribe for normalized income and score outputs.",
                 "4. Use dashboard or APIs for review, approval, and monitoring.",
               ].map((item) => (
-                <div key={item} className="rounded-[1.4rem] border border-deep/10 bg-mist/45 px-4 py-4 text-sm text-slate">
+                <div key={item} className="card-lift rounded-[1.4rem] border border-deep/10 bg-mist/45 px-4 py-4 text-sm text-slate">
                   {item}
                 </div>
               ))}
             </div>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

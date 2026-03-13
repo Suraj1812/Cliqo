@@ -168,7 +168,7 @@ export function ContactForm() {
       <div className="sm:col-span-2 flex flex-col gap-4">
         <button
           type="submit"
-          className="rounded-full bg-deep px-6 py-3 text-sm font-semibold text-sand transition hover:-translate-y-0.5 sm:w-fit"
+          className="button-sheen rounded-full bg-deep px-6 py-3 text-sm font-semibold text-sand transition hover:-translate-y-0.5 sm:w-fit"
         >
           Request Demo
         </button>

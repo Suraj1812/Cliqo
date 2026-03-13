@@ -2,6 +2,17 @@
   "name": "cliqo-site",
   "version": "0.1.0",
   "private": true,
+  "description": "Cliqo marketing and product website built with Next.js 15, React 19, and Tailwind CSS.",
+  "homepage": "https://cliqo.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Suraj1812/Cliqo.git"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@11.9.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
